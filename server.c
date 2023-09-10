@@ -20,7 +20,7 @@ int main (int argc, char const *argv[]){
     struct sockaddr_in address;
     int addrlen = sizeof(address);
     char buffer[1024] = {0};
-    char *hello = "Hello from server";
+    char *hello = "Hello from Kishor Server";
 
     // Creating socket file descripter
     // This code creates a socket file descripter using the socket() system call
@@ -58,6 +58,8 @@ int main (int argc, char const *argv[]){
     if ((new_socket=accept(server_fd,(struct sockaddr*)&address,(socklen_t*)&addrlen))<0) {
         perror("accept failed");
         exit(EXIT_FAILURE);
+    }else{
+        printf("Received\n");
     }
 
     // Read data from the client
